@@ -1,0 +1,15 @@
+{
+    "name": "Frigid-Frontier",
+    "short_name": "Frigid-Frontier",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "background_color": "#2E2E2E",
+    "theme_color": "#000",
+    "description": "Frigid Frontier Prototypev0.4",
+    "icons": [{
+      "src": "TemplateData/icons/unity-logo-dark.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }]
+  }

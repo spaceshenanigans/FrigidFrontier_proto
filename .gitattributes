@@ -1,0 +1,4 @@
+Build/FrigidFrontier_v0_4.loader.js filter=lfs diff=lfs merge=lfs -text
+Build/FrigidFrontier_v0_4.wasm filter=lfs diff=lfs merge=lfs -text
+Build/FrigidFrontier_v0_4.data filter=lfs diff=lfs merge=lfs -text
+Build/FrigidFrontier_v0_4.framework.js filter=lfs diff=lfs merge=lfs -text
