@@ -1,32 +1,41 @@
-name: Deploy to GitHub Pages
+name: Deploy WebGL with LFS
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main # Change this if your default branch name is master
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout Source Code
         uses: actions/checkout@v4
         with:
-          lfs: true # 👈 CRITICAL: This pulls the real LFS files instead of pointers
+          lfs: true # Crucial: Resolves Git LFS pointer files into actual binaries
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages Environment
         uses: actions/configure-pages@v4
 
-      # (Optional) Add steps here to build your static site generator if using Jekyll/Hugo/Astro
-
-      - name: Upload Artifacts
+      - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.' # Change this path if your build output is in a subfolder (e.g., './dist')
+          # Point this path to where your built index.html is located.
+          # If your build files are at the root level, leave it as '.'
+          path: './Build' 
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
