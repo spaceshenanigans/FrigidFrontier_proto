@@ -27,7 +27,7 @@ jobs:
           lfs: true # Crucial: Resolves Git LFS pointer files into actual binaries
 
       - name: Setup GitHub Pages Environment
-        uses: actions/configure-pages@v4
+        uses: actions/jekyll-build-pages@v1
 
       - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3
