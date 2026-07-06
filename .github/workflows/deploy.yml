@@ -34,7 +34,7 @@ jobs:
         with:
           # Point this path to where your built index.html is located.
           # If your build files are at the root level, leave it as '.'
-          path: './Build' 
+          path: '.' 
 
       - name: Deploy to GitHub Pages
         id: deployment
